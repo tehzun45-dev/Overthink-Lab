@@ -1,0 +1,70 @@
+{% liquid
+  assign button_link = section.settings.button_link | default: '/pages/about'
+%}
+
+<section class="section">
+  <div class="page-width split-feature">
+    <div class="split-feature__media">
+      {% if section.settings.image %}
+        {{ section.settings.image | image_url: width: 1100 | image_tag: loading: 'lazy', widths: '420, 720, 1100', alt: section.settings.heading }}
+      {% endif %}
+    </div>
+    <div class="split-feature__copy">
+      {% if section.settings.kicker != blank %}
+        <span class="badge">{{ section.settings.kicker }}</span>
+      {% endif %}
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.text }}</p>
+      {% if section.settings.button_label != blank %}
+        <a class="button button--hot" href="{{ button_link }}">{{ section.settings.button_label }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image text sticker",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "Lab report"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Made for the loud inner monologue."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Overthink Lab is built around expressive basics: graphic tees, oversized fits, sharp details, and clothes that feel like a thought bubble you can wear."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Read our story"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image text sticker"
+    }
+  ]
+}
+{% endschema %}

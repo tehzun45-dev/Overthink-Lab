@@ -1,0 +1,104 @@
+{% liquid
+  assign primary_link = section.settings.primary_link | default: routes.all_products_collection_url
+  assign secondary_link = section.settings.secondary_link | default: '/pages/about'
+%}
+
+<section class="hero">
+  <div class="page-width hero__grid">
+    <div class="hero__copy">
+      {% if section.settings.kicker != blank %}
+        <span class="badge">{{ section.settings.kicker }}</span>
+      {% endif %}
+      <h1>{{ section.settings.heading }}</h1>
+      {% if section.settings.text != blank %}
+        <div class="hero__text">{{ section.settings.text }}</div>
+      {% endif %}
+      <div class="hero__actions">
+        {% if section.settings.primary_label != blank %}
+          <a class="button" href="{{ primary_link }}">{{ section.settings.primary_label }}</a>
+        {% endif %}
+        {% if section.settings.secondary_label != blank %}
+          <a class="button button--secondary" href="{{ secondary_link }}">{{ section.settings.secondary_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="hero__media" aria-hidden="true">
+      <div class="hero__shape"></div>
+      <span class="sticker sticker--one">{{ section.settings.sticker_one }}</span>
+      <span class="sticker sticker--two">{{ section.settings.sticker_two }}</span>
+      <div class="hero__logo-card">
+        {% if settings.logo %}
+          {{ settings.logo | image_url: width: 720 | image_tag: widths: '360, 540, 720', alt: shop.name }}
+        {% else %}
+          <img src="{{ 'overthink-lab-logo.png' | asset_url }}" width="720" height="720" alt="{{ shop.name }}">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero chaos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "Est. 2024"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Overthink Lab"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Streetwear for people who replay the whole conversation, then still pick the cleanest fit."
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary button",
+      "default": "Shop the drop"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary button",
+      "default": "About the lab"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary link"
+    },
+    {
+      "type": "text",
+      "id": "sticker_one",
+      "label": "Sticker one",
+      "default": "Limited"
+    },
+    {
+      "type": "text",
+      "id": "sticker_two",
+      "label": "Sticker two",
+      "default": "Wear the thought"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero chaos"
+    }
+  ]
+}
+{% endschema %}
