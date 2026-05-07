@@ -409,6 +409,16 @@ button, input, select, textarea { font: inherit; }
   background: #fff;
   border: var(--line);
 }
+.footer__logo img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+}
+.site-footer p {
+  max-width: 520px;
+  overflow-wrap: anywhere;
+}
 .footer__title { margin: 0 0 14px; font-weight: 900; text-transform: uppercase; }
 .footer__links { display: grid; gap: 10px; }
 .footer__bottom { margin-top: 34px; font-size: .85rem; opacity: .75; }
@@ -446,6 +456,7 @@ button, input, select, textarea { font: inherit; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .product-info { position: static; }
   .footer__grid { grid-template-columns: 1fr; }
+  .footer__logo { max-width: 180px; }
 }
 
 @media (max-width: 560px) {
