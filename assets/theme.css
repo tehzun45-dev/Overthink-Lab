@@ -171,29 +171,34 @@ button, input, select, textarea { font: inherit; }
 }
 .hero__shape {
   position: absolute;
-  inset: 32px 24px 34px;
+  inset: 26px 18px 30px;
   border: var(--line);
-  border-radius: 42% 58% 50% 50% / 56% 40% 60% 44%;
+  border-radius: 50%;
   background: var(--sky);
   box-shadow: 6px 6px 0 var(--ink);
-  transform: rotate(4deg);
+  transform: rotate(-3deg);
 }
 .hero__logo-card {
   position: relative;
-  width: min(340px, 72vw);
-  aspect-ratio: 1;
+  width: min(410px, 78vw);
+  aspect-ratio: 1.08;
   display: grid;
   place-items: center;
-  padding: 28px;
+  padding: clamp(22px, 4vw, 42px);
   border: var(--line);
-  background: #fff;
-  box-shadow: 6px 6px 0 var(--ink);
-  transform: rotate(-4deg);
+  border-radius: 34% 66% 42% 58% / 56% 38% 62% 44%;
+  background:
+    radial-gradient(circle at 16px 16px, rgba(17,17,17,.08) 2px, transparent 2px) 0 0 / 26px 26px,
+    #fffdf6;
+  box-shadow: 7px 7px 0 var(--ink);
+  transform: rotate(-6deg);
 }
 .hero__logo-card img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  mix-blend-mode: multiply;
+  transform: scale(1.18);
 }
 .hero__wordmark {
   display: block;
@@ -498,8 +503,8 @@ button, input, select, textarea { font: inherit; }
   .hero__media { min-height: 330px; }
   .hero__shape { inset: 32px 16px 28px; }
   .hero__logo-card {
-    width: min(280px, 76vw);
-    padding: 20px;
+    width: min(310px, 78vw);
+    padding: 24px;
   }
   .sticker { font-size: .78rem; }
   .sticker--one { top: 28px; right: 14px; }
