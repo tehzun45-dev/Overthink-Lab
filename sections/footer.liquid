@@ -5,7 +5,7 @@
         {% if settings.logo %}
           {{ settings.logo | image_url: width: 360 | image_tag: widths: '180, 260, 360', alt: shop.name }}
         {% else %}
-          <span class="logo-text">Overthink Lab</span>
+          <img src="{{ 'overthink-lab-logo.png' | asset_url }}" width="260" height="260" alt="{{ shop.name }}">
         {% endif %}
       </div>
       <p>{{ section.settings.text }}</p>

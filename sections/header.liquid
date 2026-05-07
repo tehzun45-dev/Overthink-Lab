@@ -43,7 +43,7 @@
       {% if logo %}
         {{ logo | image_url: width: 360 | image_tag: widths: '160, 240, 360', alt: shop.name }}
       {% else %}
-        <span class="logo-text">Overthink Lab</span>
+        <img src="{{ 'overthink-lab-logo.png' | asset_url }}" width="240" height="240" alt="{{ shop.name }}">
       {% endif %}
     </a>
 

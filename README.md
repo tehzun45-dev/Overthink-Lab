@@ -8,7 +8,7 @@ Custom Shopify Online Store 2.0 theme for Overthink Lab.
 - `sections/` - editable Shopify sections for the homepage, product, collection, cart, and pages.
 - `templates/*.json` - Shopify templates that assemble the sections.
 - `assets/theme.css` and `assets/theme.js` - visual system and small interactions.
-- `assets/overthink-lab-logo.png` - bundled brand logo.
+- `assets/overthink-lab-logo.png` - bundled brand logo used by default.
 
 ## Connect to Shopify with GitHub
 
