@@ -1,0 +1,22 @@
+{
+  "accessibility": {
+    "skip_to_text": "Skip to content"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "quantity": "Quantity"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Cart",
+      "empty": "Your cart is empty",
+      "checkout": "Checkout",
+      "update": "Update cart",
+      "subtotal": "Subtotal"
+    }
+  }
+}

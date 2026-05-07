@@ -1,0 +1,79 @@
+{% liquid
+  assign logo = settings.logo
+  if logo == blank
+    assign logo_asset = 'overthink-lab-logo.png' | asset_url
+  endif
+%}
+
+<style>
+  :root {
+    --color-ink: {{ settings.color_ink }};
+    --color-paper: {{ settings.color_paper }};
+    --color-acid: {{ settings.color_acid }};
+    --color-hot: {{ settings.color_hot }};
+    --color-sky: {{ settings.color_sky }};
+    --color-clay: {{ settings.color_clay }};
+  }
+</style>
+
+<header class="site-header">
+  {% if section.settings.announcement != blank %}
+    <div class="announcement" aria-label="Announcement">
+      <div class="announcement__track">
+        {% for i in (1..6) %}
+          <span>{{ section.settings.announcement }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="page-width header__inner">
+    <menu-toggle class="header__toggle">
+      <button type="button" aria-expanded="false" aria-controls="HeaderMenu">Menu</button>
+    </menu-toggle>
+
+    <nav id="HeaderMenu" class="header__nav" aria-label="Primary navigation">
+      {% for link in linklists[section.settings.menu].links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% else %}
+        <a href="/collections/all">Shop</a>
+        <a href="/pages/about">About</a>
+        <a href="/pages/contact">Contact</a>
+      {% endfor %}
+    </nav>
+
+    <a class="header__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+      {% if logo %}
+        {{ logo | image_url: width: 360 | image_tag: widths: '160, 240, 360', alt: shop.name }}
+      {% else %}
+        <img src="{{ logo_asset }}" width="240" height="240" alt="{{ shop.name }}">
+      {% endif %}
+    </a>
+
+    <div class="header__actions">
+      <a href="{{ routes.search_url }}">Search</a>
+      <a href="{{ routes.account_url }}">Account</a>
+      <a class="cart-link" href="{{ routes.cart_url }}">Cart ({{ cart.item_count }})</a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Announcement",
+      "default": "Overthinking every stitch. New drops coming soon."
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

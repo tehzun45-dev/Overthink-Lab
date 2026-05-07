@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-chaos",
+      "settings": {
+        "primary_link": "/collections/all",
+        "secondary_link": "/pages/about"
+      }
+    },
+    "marquee": {
+      "type": "pattern-marquee"
+    },
+    "featured": {
+      "type": "featured-collection"
+    },
+    "story": {
+      "type": "image-text-sticker",
+      "settings": {
+        "button_link": "/pages/about"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "marquee",
+    "featured",
+    "story"
+  ]
+}

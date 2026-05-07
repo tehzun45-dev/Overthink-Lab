@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product"
+    },
+    "marquee": {
+      "type": "pattern-marquee",
+      "settings": {
+        "text": "Overthink the fit / Add to cart /"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "marquee"
+  ]
+}

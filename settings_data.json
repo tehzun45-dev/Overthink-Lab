@@ -1,0 +1,15 @@
+{
+  "current": {
+    "sections": {},
+    "content_for_index": [],
+    "blocks": {},
+    "settings": {
+      "color_ink": "#111111",
+      "color_paper": "#fbf8ef",
+      "color_acid": "#d7ff37",
+      "color_hot": "#ff4b92",
+      "color_sky": "#5bc8ff",
+      "color_clay": "#ff7a3d"
+    }
+  }
+}

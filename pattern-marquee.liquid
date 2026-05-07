@@ -1,0 +1,26 @@
+<section class="marquee-band" aria-label="{{ section.settings.text | escape }}">
+  <div class="marquee-band__track">
+    {% for i in (1..8) %}
+      <span>{{ section.settings.text }}</span>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pattern marquee",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Think too much / Dress anyway /"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pattern marquee"
+    }
+  ]
+}
+{% endschema %}

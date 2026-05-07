@@ -1,0 +1,56 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Overthink Lab",
+    "theme_version": "1.0.0",
+    "theme_author": "Overthink Lab",
+    "theme_documentation_url": "https://shopify.dev/docs/storefronts/themes",
+    "theme_support_url": "https://overthink-lab.myshopify.com/"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "color",
+        "id": "color_ink",
+        "label": "Ink",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "color_paper",
+        "label": "Paper",
+        "default": "#fbf8ef"
+      },
+      {
+        "type": "color",
+        "id": "color_acid",
+        "label": "Acid",
+        "default": "#d7ff37"
+      },
+      {
+        "type": "color",
+        "id": "color_hot",
+        "label": "Hot pink",
+        "default": "#ff4b92"
+      },
+      {
+        "type": "color",
+        "id": "color_sky",
+        "label": "Sky",
+        "default": "#5bc8ff"
+      },
+      {
+        "type": "color",
+        "id": "color_clay",
+        "label": "Clay",
+        "default": "#ff7a3d"
+      }
+    ]
+  }
+]

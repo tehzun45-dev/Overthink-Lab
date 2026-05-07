@@ -1,0 +1,71 @@
+<section class="section">
+  <div class="page-width">
+    <div class="section__head">
+      <div>
+        <p class="section__kicker">{{ collection.products_count }} pieces</p>
+        <h1 class="section__title">{{ collection.title }}</h1>
+      </div>
+      {% if collection.description != blank %}
+        <div class="rte">{{ collection.description }}</div>
+      {% endif %}
+    </div>
+
+    <form class="collection-toolbar" method="get">
+      <div>
+        {% for filter in collection.filters %}
+          {% if filter.type == 'list' %}
+            <select class="field" name="{{ filter.param_name }}" onchange="this.form.submit()">
+              <option value="">{{ filter.label }}</option>
+              {% for value in filter.values %}
+                <option value="{{ value.value }}" {% if value.active %}selected{% endif %}>{{ value.label }}</option>
+              {% endfor %}
+            </select>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <select class="field" name="sort_by" onchange="this.form.submit()">
+        {% for option in collection.sort_options %}
+          <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>
+        {% endfor %}
+      </select>
+    </form>
+
+    {% paginate collection.products by section.settings.products_per_page %}
+      <div class="product-grid">
+        {% for product in collection.products %}
+          {% render 'product-card', product: product %}
+        {% else %}
+          <p>No products found.</p>
+        {% endfor %}
+      </div>
+
+      {% if paginate.pages > 1 %}
+        <div class="hero__actions" style="justify-content:center">
+          {% if paginate.previous %}
+            <a class="button button--secondary" href="{{ paginate.previous.url }}">Previous</a>
+          {% endif %}
+          {% if paginate.next %}
+            <a class="button" href="{{ paginate.next.url }}">Next</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endpaginate %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection grid",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 24,
+      "step": 4,
+      "label": "Products per page",
+      "default": 12
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,66 @@
+<footer class="site-footer">
+  <div class="page-width footer__grid">
+    <div>
+      <div class="footer__logo">
+        {% if settings.logo %}
+          {{ settings.logo | image_url: width: 360 | image_tag: widths: '180, 260, 360', alt: shop.name }}
+        {% else %}
+          <img src="{{ 'overthink-lab-logo.png' | asset_url }}" width="260" height="260" alt="{{ shop.name }}">
+        {% endif %}
+      </div>
+      <p>{{ section.settings.text }}</p>
+    </div>
+
+    <div>
+      <p class="footer__title">Shop</p>
+      <div class="footer__links">
+        {% for link in linklists[section.settings.shop_menu].links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% else %}
+          <a href="/collections/all">All products</a>
+          <a href="/cart">Cart</a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div>
+      <p class="footer__title">Lab Notes</p>
+      <div class="footer__links">
+        {% for link in linklists[section.settings.info_menu].links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% else %}
+          <a href="/pages/about">About</a>
+          <a href="/policies/shipping-policy">Shipping</a>
+          <a href="/policies/refund-policy">Returns</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="page-width footer__bottom">
+    &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. Est. 2024.
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Brand text",
+      "default": "A clothing lab for noisy thoughts, clean fits, and wearable overanalysis."
+    },
+    {
+      "type": "link_list",
+      "id": "shop_menu",
+      "label": "Shop menu"
+    },
+    {
+      "type": "link_list",
+      "id": "info_menu",
+      "label": "Info menu"
+    }
+  ]
+}
+{% endschema %}
