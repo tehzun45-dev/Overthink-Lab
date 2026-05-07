@@ -1,21 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero-chaos",
       "settings": {
+        "kicker": "Est. 2024",
+        "heading": "Overthink Lab",
+        "text": "Streetwear for people who replay the whole conversation, then still pick the cleanest fit.",
+        "primary_label": "Shop the drop",
         "primary_link": "/collections/all",
-        "secondary_link": "/pages/about"
+        "secondary_label": "About the lab",
+        "secondary_link": "/pages/about",
+        "sticker_one": "Limited",
+        "sticker_two": "Wear the thought"
       }
     },
     "marquee": {
-      "type": "pattern-marquee"
+      "type": "pattern-marquee",
+      "settings": {
+        "text": "Think too much / Dress anyway /"
+      }
     },
     "featured": {
-      "type": "featured-collection"
+      "type": "featured-collection",
+      "settings": {
+        "kicker": "First experiment",
+        "heading": "Fresh from the lab",
+        "collection": "t-shirts",
+        "product_limit": 4
+      }
     },
     "story": {
       "type": "image-text-sticker",
       "settings": {
+        "kicker": "Lab report",
+        "heading": "Made for the loud inner monologue.",
+        "text": "Overthink Lab is built around expressive basics: graphic tees, oversized fits, sharp details, and clothes that feel like a thought bubble you can wear.",
+        "button_label": "Read our story",
         "button_link": "/pages/about"
       }
     }
