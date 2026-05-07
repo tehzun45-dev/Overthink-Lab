@@ -435,15 +435,25 @@ button, input, select, textarea { font: inherit; }
 }
 .footer__logo {
   max-width: 220px;
-  padding: 14px;
-  background: #fff;
+  aspect-ratio: 1.08;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background:
+    radial-gradient(circle at 12px 12px, rgba(17,17,17,.08) 2px, transparent 2px) 0 0 / 24px 24px,
+    #fffdf6;
   border: var(--line);
+  border-radius: 34% 66% 42% 58% / 56% 38% 62% 44%;
+  box-shadow: 5px 5px 0 var(--hot);
+  transform: rotate(-3deg);
 }
 .footer__logo img {
   width: 100%;
   height: auto;
-  max-height: 150px;
+  max-height: 130px;
   object-fit: contain;
+  mix-blend-mode: multiply;
+  transform: scale(1.18);
 }
 .site-footer p {
   max-width: 520px;
