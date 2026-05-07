@@ -120,6 +120,13 @@ button, input, select, textarea { font: inherit; }
   text-transform: uppercase;
 }
 .header__logo img { max-height: 74px; width: auto; }
+.logo-text {
+  display: inline-block;
+  font-size: clamp(1.05rem, 2.8vw, 1.8rem);
+  font-weight: 900;
+  line-height: .85;
+  text-transform: uppercase;
+}
 .header__toggle { display: none; background: transparent; border: 0; font-weight: 900; text-transform: uppercase; }
 
 .hero {
@@ -173,6 +180,13 @@ button, input, select, textarea { font: inherit; }
   background: #fff;
   box-shadow: var(--shadow);
   transform: rotate(-4deg);
+}
+.hero__wordmark {
+  display: block;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: .82;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 .sticker {
   position: absolute;
